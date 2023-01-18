@@ -10,5 +10,5 @@ def welcome(request):
     return render(request,
                   "websites/welcome.html",
                   {
-                      "meeting_nbr":Meeting.objects.count()
+                      "meetings":Meeting.objects.all()
                   })
