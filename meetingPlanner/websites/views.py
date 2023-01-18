@@ -1,9 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from meetings.models import Meeting
 # Create your views here.
 
 
 def welcome(request):
     """greeting view function"""
 
-    return HttpResponse("<h1>This is a greeting from django</h1>")
+    return render(request,
+                  "websites/welcome.html",
+                  {
+                      "meeting_nbr":Meeting.objects.count()
+                  })

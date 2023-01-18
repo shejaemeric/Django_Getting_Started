@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from websites.views import welcome
+from meetings.views import getMeeting
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('welcome',welcome)
+    path('',welcome),
+    path('meetings/<int:id>',getMeeting)
 ]
